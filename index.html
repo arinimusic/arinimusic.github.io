@@ -1,99 +1,137 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+  <!-- 문자 인코딩 설정 -->
   <meta charset="UTF-8" />
+  
+  <!-- 브라우저 탭에 표시될 제목 -->
   <title>Arini - 감성 싱어송라이터</title>
+
   <style>
-    /* 기본 스타일 */
+    /* 전체 페이지 스타일 */
     body {
-      background: #fefefe;
-      color: #333;
-      font-family: 'Helvetica Neue', sans-serif;
-      text-align: center;
-      padding: 80px 20px;
-      margin: 0;
+      background: #fefefe; /* 페이지 배경색 */
+      color: #333; /* 글자 색 */
+      font-family: 'Helvetica Neue', sans-serif; /* 글꼴 설정 */
+      text-align: center; /* 텍스트 중앙 정렬 */
+      padding: 80px 20px; /* 페이지 여백 설정 */
+      margin: 0; /* 페이지 외부 여백 제거 */
     }
+
+    /* 제목 스타일 */
     h1 {
-      font-size: 3em;
-      margin-bottom: 0.2em;
+      font-size: 3em; /* 제목 크기 설정 */
+      margin-bottom: 0.2em; /* 제목 아래 여백 설정 */
     }
+
+    /* 본문 텍스트 스타일 */
     p {
-      font-size: 1.2em;
-      margin-top: 0;
+      font-size: 1.2em; /* 본문 텍스트 크기 */
+      margin-top: 0; /* 본문 위 여백 없애기 */
     }
+
+    /* 링크 스타일 */
     .links a {
-      display: inline-block;
-      margin: 10px;
-      text-decoration: none;
-      color: #555;
-      font-weight: bold;
+      display: inline-block; /* 링크가 가로로 나열되게 설정 */
+      margin: 10px; /* 링크 간의 간격 설정 */
+      text-decoration: none; /* 링크 밑줄 제거 */
+      color: #555; /* 링크 텍스트 색 */
+      font-weight: bold; /* 링크 텍스트 두껍게 */
     }
 
-    /* 아티스트 카드 그리드 스타일 */
+    /* 그리드 레이아웃 스타일 (여러 개의 카드를 배치) */
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      max-width: 1000px;
-      margin: 40px auto;
+      display: grid; /* 그리드 레이아웃 설정 */
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 칸 크기 자동 조정 */
+      gap: 30px; /* 카드 간의 간격 설정 */
+      max-width: 1000px; /* 그리드의 최대 너비 */
+      margin: 40px auto; /* 그리드 여백 설정 (가로 중앙 정렬) */
     }
 
+    /* 카드 스타일 */
     .card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease;
+      background: white; /* 카드 배경색 */
+      border-radius: 12px; /* 카드 모서리 둥글게 처리 */
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* 카드에 그림자 효과 추가 */
+      overflow: hidden; /* 카드 안의 콘텐츠가 카드 밖으로 나가지 않게 처리 */
+      transition: transform 0.3s ease; /* 카드에 마우스를 올렸을 때 부드럽게 움직이는 효과 */
     }
+
+    /* 카드에 마우스를 올렸을 때 동작 */
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-5px); /* 마우스 오버 시 카드가 살짝 위로 올라감 */
     }
+
+    /* 카드 이미지 스타일 */
     .card img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
+      width: 100%; /* 카드 이미지 너비를 카드에 맞게 설정 */
+      height: 280px; /* 카드 이미지 높이 설정 */
+      object-fit: cover; /* 이미지를 비율에 맞게 잘라서 꽉 채우기 */
     }
+
+    /* 카드 내용 영역 스타일 */
     .card-content {
-      padding: 20px;
+      padding: 20px; /* 카드 내용의 여백 설정 */
     }
+
+    /* 카드 제목 스타일 */
     .card-content h2 {
-      margin: 0 0 10px;
-      font-size: 1.5em;
+      margin: 0 0 10px; /* 제목 아래 여백 설정 */
+      font-size: 1.5em; /* 제목 크기 설정 */
     }
+
+    /* 카드 본문 스타일 */
     .card-content p {
-      margin: 0;
-      color: #555;
+      margin: 0; /* 본문 텍스트의 위아래 여백 없애기 */
+      color: #555; /* 본문 색 설정 */
     }
   </style>
 </head>
 <body>
+
+  <!-- 페이지 제목 -->
   <h1>Arini</h1>
+  
+  <!-- 간단한 아티스트 소개 -->
   <p>감성을 노래하는 싱어송라이터</p>
 
+  <!-- 여러 개의 카드 레이아웃을 위한 그리드 -->
   <div class="grid">
-    <!-- 첫 번째 카드 (아티스트 소개) -->
+
+    <!-- 첫 번째 카드 (Arini 소개) -->
     <div class="card">
-      <img src="https://source.unsplash.com/random/400x300?music" alt="Arini">
+      <!-- 카드에 들어갈 이미지 -->
+      <img src="assets/images/myimage.jpg" alt="Arini">
+      <!-- 카드 내용 -->
       <div class="card-content">
+        <!-- 카드 제목 -->
         <h2>Arini</h2>
+        <!-- 카드 본문 텍스트 -->
         <p>감성을 노래하는 싱어송라이터. 따뜻한 메시지를 음악으로 전합니다.</p>
       </div>
     </div>
 
-    <!-- 두 번째 카드 (게스트 아티스트 예시) -->
+    <!-- 두 번째 카드 (예시 게스트 아티스트) -->
     <div class="card">
+      <!-- 카드에 들어갈 이미지 -->
       <img src="https://source.unsplash.com/random/400x300?guitar" alt="Artist 2">
+      <!-- 카드 내용 -->
       <div class="card-content">
+        <!-- 카드 제목 -->
         <h2>Guest Artist</h2>
+        <!-- 카드 본문 텍스트 -->
         <p>감성 콜라보 아티스트. Arini와 함께한 특별한 무대.</p>
       </div>
     </div>
+
   </div>
 
+  <!-- 소셜 미디어 링크 -->
   <div class="links">
     <a href="https://instagram.com/your_id" target="_blank">Instagram</a>
     <a href="https://youtube.com/@your_channel" target="_blank">YouTube</a>
     <a href="mailto:your@email.com">Email</a>
   </div>
+
 </body>
 </html>
