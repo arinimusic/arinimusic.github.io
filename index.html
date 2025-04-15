@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <title>Arini - 감성 싱어송라이터</title>
   <style>
-    body 
-    {
+    /* 기본 스타일 */
+    body {
       background: #fefefe;
       color: #333;
       font-family: 'Helvetica Neue', sans-serif;
       text-align: center;
       padding: 80px 20px;
+      margin: 0;
     }
     h1 {
       font-size: 3em;
@@ -27,11 +28,68 @@
       color: #555;
       font-weight: bold;
     }
+
+    /* 아티스트 카드 그리드 스타일 */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 40px auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 20px;
+    }
+    .card-content h2 {
+      margin: 0 0 10px;
+      font-size: 1.5em;
+    }
+    .card-content p {
+      margin: 0;
+      color: #555;
+    }
   </style>
 </head>
 <body>
   <h1>Arini</h1>
   <p>감성을 노래하는 싱어송라이터</p>
+
+  <div class="grid">
+    <!-- 첫 번째 카드 (아티스트 소개) -->
+    <div class="card">
+      <img src="https://source.unsplash.com/random/400x300?music" alt="Arini">
+      <div class="card-content">
+        <h2>Arini</h2>
+        <p>감성을 노래하는 싱어송라이터. 따뜻한 메시지를 음악으로 전합니다.</p>
+      </div>
+    </div>
+
+    <!-- 두 번째 카드 (게스트 아티스트 예시) -->
+    <div class="card">
+      <img src="https://source.unsplash.com/random/400x300?guitar" alt="Artist 2">
+      <div class="card-content">
+        <h2>Guest Artist</h2>
+        <p>감성 콜라보 아티스트. Arini와 함께한 특별한 무대.</p>
+      </div>
+    </div>
+  </div>
+
   <div class="links">
     <a href="https://instagram.com/your_id" target="_blank">Instagram</a>
     <a href="https://youtube.com/@your_channel" target="_blank">YouTube</a>
