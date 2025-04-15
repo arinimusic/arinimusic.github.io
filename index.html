@@ -4,166 +4,165 @@
   <meta charset="UTF-8" />
   <title>Arini - 감성 싱어송라이터</title>
   <style>
-    /* 전체 페이지 스타일 */
     body {
-      background: #fefefe; /* 페이지 배경색 설정 */
-      color: #333; /* 글자 색 설정 */
-      font-family: 'Helvetica Neue', sans-serif; /* 폰트 설정 */
-      text-align: center; /* 텍스트 중앙 정렬 */
-      padding: 0; /* 페이지의 기본 패딩 제거 */
-      margin: 0; /* 페이지의 기본 마진 제거 */
+      background: #fefefe;
+      color: #333;
+      font-family: 'Helvetica Neue', sans-serif;
+      padding: 0;
+      margin: 0;
     }
 
-    /* 상단 고정 메뉴 스타일 */
+    /* 상단 고정 메뉴 */
     .navbar {
-      position: fixed; /* 메뉴를 페이지 상단에 고정 */
-      top: 0; /* 상단에 위치 */
-      left: 0; /* 왼쪽에 정렬 */
-      width: 100%; /* 메뉴 너비를 전체 너비로 설정 */
-      background-color: rgba(0, 0, 0, 0.7); /* 메뉴 배경색을 검정색 반투명으로 설정 */
-      color: white; /* 메뉴 글자 색을 흰색으로 설정 */
-      padding: 15px 20px; /* 메뉴의 내부 여백 설정 */
-      z-index: 1000; /* 메뉴가 다른 콘텐츠 위에 오도록 설정 */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
     }
 
-    /* 메뉴 항목 스타일 */
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .navbar .logo img {
+      height: 40px;
+    }
+
+    .navbar .logo-title {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .navbar .menu {
+      display: flex;
+      gap: 20px;
+    }
+
     .navbar a {
-      text-decoration: none; /* 링크 밑줄 제거 */
-      color: white; /* 링크 글자 색을 흰색으로 설정 */
-      margin: 0 20px; /* 링크 간의 간격 설정 */
-      font-weight: bold; /* 링크 글씨를 두껍게 설정 */
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    /* 메뉴 항목에 마우스를 올렸을 때 색상 변경 */
     .navbar a:hover {
-      color: #f1c40f; /* 마우스를 올리면 링크 색상을 금색으로 변경 */
+      color: #f1c40f;
     }
 
-    /* 페이지 내용 영역 스타일 */
+    /* 본문 콘텐츠 */
     .content {
-      padding-top: 80px; /* 고정 메뉴로 인해 내용이 가려지지 않도록 위쪽 여백을 추가 */
+      padding-top: 80px;
+      text-align: center;
     }
 
-    /* 앨범 카드 그리드 레이아웃 스타일 */
     .grid {
-      display: grid; /* 그리드 레이아웃으로 배치 */
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 카드 크기를 자동 조정하며 최소 250px의 너비로 설정 */
-      gap: 30px; /* 카드 간의 간격 설정 */
-      max-width: 1000px; /* 그리드 최대 너비 설정 */
-      margin: 40px auto; /* 그리드의 여백 설정 (가로 중앙 정렬) */
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
-    /* 카드 스타일 */
     .card {
-      position: relative; /* 카드 안의 요소들이 절대 위치를 가질 수 있도록 설정 */
-      background: white; /* 카드 배경색을 흰색으로 설정 */
-      border-radius: 12px; /* 카드 모서리를 둥글게 설정 */
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* 카드에 그림자 효과 추가 */
-      overflow: hidden; /* 카드 안의 콘텐츠가 카드 밖으로 나가지 않도록 설정 */
-      transition: transform 0.3s ease; /* 카드에 마우스를 올렸을 때 부드럽게 움직이는 효과 */
+      position: relative;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
     }
 
-    /* 카드에 마우스를 올렸을 때 카드 움직임 */
     .card:hover {
-      transform: translateY(-5px); /* 마우스 오버 시 카드가 살짝 위로 올라감 */
+      transform: translateY(-5px);
     }
 
-    /* 카드 이미지 스타일 */
     .card img {
-      width: 100%; /* 카드 이미지의 너비를 카드에 맞게 설정 */
-      height: 280px; /* 카드 이미지의 높이를 설정 */
-      object-fit: cover; /* 이미지를 비율에 맞게 자르고 꽉 채우기 */
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
     }
 
-    /* 앨범 이름 스타일 (기본적으로 숨김 처리) */
     .album-name {
-      position: absolute; /* 앨범 이름을 이미지 위에 절대 위치로 배치 */
-      bottom: 10px; /* 카드 하단에서 10px 떨어지게 설정 */
-      left: 50%; /* 수평 중앙 정렬 */
-      transform: translateX(-50%); /* 수평 중앙 정렬을 위한 오프셋 설정 */
-      font-size: 1.5em; /* 앨범 이름 폰트 크기 설정 */
-      color: white; /* 앨범 이름 텍스트 색상 설정 */
-      background-color: rgba(0, 0, 0, 0.7); /* 앨범 이름 배경을 검정색 반투명 처리 */
-      padding: 10px; /* 앨범 이름 주변 여백 설정 */
-      display: none; /* 기본적으로 앨범 이름은 숨김 처리 */
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5em;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      display: none;
     }
 
-    /* 카드에 마우스를 올렸을 때 앨범 이름 표시 */
     .card:hover .album-name {
-      display: block; /* 마우스를 올리면 앨범 이름이 보이게 설정 */
+      display: block;
     }
 
-    /* 소셜 미디어 링크 스타일 */
     .links a {
-      display: inline-block; /* 링크들을 가로로 나열 */
-      margin: 10px; /* 링크 간의 간격 설정 */
-      text-decoration: none; /* 링크 밑줄 제거 */
-      color: #555; /* 링크 텍스트 색을 어두운 회색으로 설정 */
-      font-weight: bold; /* 링크 텍스트 두껍게 설정 */
+      display: inline-block;
+      margin: 10px;
+      text-decoration: none;
+      color: #555;
+      font-weight: bold;
     }
-
   </style>
 </head>
 <body>
 
   <!-- 상단 고정 메뉴 -->
   <div class="navbar">
-    <!-- 메뉴 항목: 아티스트 페이지로 이동 -->
-    <a href="#artist">아티스트</a> <!-- '아티스트'로 링크 -->
-    <!-- 메뉴 항목: 컨택트 페이지로 이동 -->
-    <a href="#contact">컨택트</a> <!-- '컨택트'로 링크 -->
+    <!-- 왼쪽 로고 영역 -->
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="Arini 로고" />
+      <span class="logo-title">Arini - 감성 싱어송라이터</span>
+    </div>
+    <!-- 오른쪽 메뉴 -->
+    <div class="menu">
+      <a href="#artist">아티스트</a>
+      <a href="#contact">컨택트</a>
+    </div>
   </div>
 
-  <!-- 페이지 내용 (메뉴가 고정되어 있기 때문에 아래 내용은 여백을 줘야 함) -->
-  <div class="content">
-    <!-- 페이지 제목 -->
+  <!-- 본문 콘텐츠 -->
+  <div class="content" id="artist">
     <h1>Arini</h1>
-
-    <!-- 간단한 아티스트 소개 -->
     <p>감성을 노래하는 싱어송라이터</p>
 
-    <!-- 앨범 카드 그리드 -->
     <div class="grid">
-
-      <!-- 앨범 1 카드 -->
       <div class="card">
-        <img src="assets/images/album1.jpg" alt="앨범 1"> <!-- 앨범 1 이미지 -->
-        <div class="album-name">하나</div> <!-- 앨범 이름 -->
+        <img src="assets/images/album1.jpg" alt="앨범 1">
+        <div class="album-name">하나</div>
       </div>
-
-      <!-- 앨범 2 카드 -->
       <div class="card">
-        <img src="assets/images/album2.jpg" alt="앨범 2"> <!-- 앨범 2 이미지 -->
-        <div class="album-name">둘</div> <!-- 앨범 이름 -->
+        <img src="assets/images/album2.jpg" alt="앨범 2">
+        <div class="album-name">둘</div>
       </div>
-
-      <!-- 앨범 3 카드 -->
       <div class="card">
-        <img src="assets/images/album3.jpg" alt="앨범 3"> <!-- 앨범 3 이미지 -->
-        <div class="album-name">셋</div> <!-- 앨범 이름 -->
+        <img src="assets/images/album3.jpg" alt="앨범 3">
+        <div class="album-name">셋</div>
       </div>
-
-      <!-- 앨범 4 카드 -->
       <div class="card">
-        <img src="assets/images/album4.jpg" alt="앨범 4"> <!-- 앨범 4 이미지 -->
-        <div class="album-name">넷</div> <!-- 앨범 이름 -->
+        <img src="assets/images/album4.jpg" alt="앨범 4">
+        <div class="album-name">넷</div>
       </div>
-
-      <!-- 앨범 5 카드 -->
       <div class="card">
-        <img src="assets/images/album5.jpg" alt="앨범 5"> <!-- 앨범 5 이미지 -->
-        <div class="album-name">다섯</div> <!-- 앨범 이름 -->
+        <img src="assets/images/album5.jpg" alt="앨범 5">
+        <div class="album-name">다섯</div>
       </div>
-
     </div>
 
-    <!-- 소셜 미디어 링크 -->
-    <div class="links">
-      <!-- Instagram 링크 -->
+    <div class="links" id="contact">
       <a href="https://instagram.com/your_id" target="_blank">Instagram</a>
-      <!-- YouTube 링크 -->
       <a href="https://youtube.com/@your_channel" target="_blank">YouTube</a>
-      <!-- Email 링크 -->
       <a href="mailto:your@email.com">Email</a>
     </div>
   </div>
