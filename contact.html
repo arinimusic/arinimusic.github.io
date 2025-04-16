@@ -5,7 +5,7 @@
   <title>Arini - Contact</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Font Awesome (아이콘 표시용) - 안정적인 CDN 버전 -->
+  <!-- Font Awesome (아이콘 표시용) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Fo3rlrZj/kTc+Vq4z6f7aR+6FyP0q1v7J5D6O+jsH7KDn2xZbXe7QTrNQ7v9n08Vb9KU5R4FbcYvS90TWe09YQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
@@ -120,32 +120,6 @@
       line-height: 1.8;
     }
 
-    /* 하단 푸터 */
-    .footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #ffffff;
-      color: #007bff;
-      padding: 20px 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
-      gap: 30px;
-    }
-
-    .footer a {
-      color: #333;
-      font-size: 1.8rem;
-      transition: color 0.3s;
-    }
-
-    .footer a:hover {
-      color: #007bff;
-    }
-
     @media (max-width: 768px) {
       .navbar {
         flex-direction: column;
@@ -171,8 +145,8 @@
     <!-- 메뉴 항목들 -->
     <div class="menu">
       <a href="artist.html" id="artist-menu">Artist</a>
-      <a href="notice.html">Notice</a> <!-- Artist 오른쪽에 Notice 추가 -->
-      <a href="contact.html" id="contact-menu">Contact</a> <!-- Notice 오른쪽에 Contact 유지 -->
+      <a href="notice.html">Notice</a>
+      <a href="contact.html" id="contact-menu">Contact</a>
 
       <!-- Language 드롭다운 -->
       <div class="dropdown">
@@ -183,7 +157,7 @@
         </div>
       </div>
 
-      <!-- Language 오른쪽에 공백 항목 추가 -->
+      <!-- 공백 -->
       <a href="#">    </a>
     </div>
   </div>
@@ -199,25 +173,26 @@
     </div>
   </div>
 
-  <!-- 하단 푸터 (아이콘 클릭 시 링크 연결) -->
-  <div class="footer">
-    <a href="https://youtube.com/@singing_arini?si=WwHcG-7OF4xHqbHh" target="_blank" aria-label="YouTube">
-      <i class="fab fa-youtube"></i>
-    </a>
-    <a href="https://instagram.com/arini.music" target="_blank" aria-label="Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-  </div>
-
   <!-- 언어 설정 스크립트 -->
   <script>
     function setLanguage(language) {
+      const title = document.getElementById('contact-title');
+      const desc = document.getElementById('contact-description');
+      const dropBtn = document.querySelector('.dropbtn');
+      const dropdownLinks = document.querySelectorAll('.dropdown-content a');
+
       if (language === 'en') {
-        document.getElementById('contact-title').textContent = 'Contact';
-        document.getElementById('contact-description').textContent = 'If you have any questions, feel free to contact me through the email or SNS below.';
+        title.textContent = 'Contact';
+        desc.textContent = 'If you have any questions, feel free to contact me through the email or SNS below.';
+        dropBtn.textContent = 'Language';
+        dropdownLinks[0].textContent = 'Korean';
+        dropdownLinks[1].textContent = 'English';
       } else {
-        document.getElementById('contact-title').textContent = '연락처';
-        document.getElementById('contact-description').textContent = '문의 사항이 있으시면 아래 이메일 또는 SNS를 통해 연락해주세요.';
+        title.textContent = '연락처';
+        desc.textContent = '문의 사항이 있으시면 아래 이메일 또는 SNS를 통해 연락해주세요.';
+        dropBtn.textContent = '언어';
+        dropdownLinks[0].textContent = '한국어';
+        dropdownLinks[1].textContent = '영어';
       }
     }
   </script>
