@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <title>Arini - Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Font Awesome (푸터 아이콘용) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Fo3rlrZj/kTc+Vq4z6f7aR+6FyP0q1v7J5D6O+jsH7KDn2xZbXe7QTrNQ7v9n08Vb9KU5R4FbcYvS90TWe09YQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
@@ -17,7 +15,6 @@
       margin: 0;
     }
 
-    /* 상단 네비게이션 */
     .navbar {
       position: fixed;
       top: 0;
@@ -49,7 +46,6 @@
       color: #007bff;
       text-decoration: none;
       font-weight: bold;
-      position: relative;
       padding-bottom: 4px;
       transition: color 0.3s;
     }
@@ -137,32 +133,6 @@
       color: #333;
     }
 
-    /* 하단 푸터 */
-    .footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #ffffff;
-      color: #007bff;
-      padding: 20px 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
-      gap: 30px;
-    }
-
-    .footer a {
-      color: #333;
-      font-size: 1.8rem;
-      transition: color 0.3s;
-    }
-
-    .footer a:hover {
-      color: #007bff;
-    }
-
     @media (max-width: 768px) {
       .navbar {
         flex-direction: column;
@@ -182,49 +152,43 @@
 </head>
 <body>
 
-  <!-- 상단 네비게이션 -->
+  <!-- 네비게이션 -->
   <div class="navbar">
-    <!-- 로고 -->
     <div class="logo">
       <img src="assets/images/logo.png" alt="Arini 로고" />
     </div>
-
-    <!-- 메뉴 -->
     <div class="menu">
       <a href="artist.html">Artist</a>
       <a href="notice.html">Notice</a>
       <a href="contact.html">Contact</a>
 
-      <!-- 언어 드롭다운 -->
+      <!-- 언어 선택 -->
       <div class="dropdown">
-        <a href="#" class="dropbtn">Language</a>
+        <a href="#" class="dropbtn">언어</a>
         <div class="dropdown-content">
-          <a href="#">Korean</a>
-          <a href="#">English</a>
+          <a href="#" onclick="setLanguage('ko')">한국어</a>
+          <a href="#" onclick="setLanguage('en')">English</a>
         </div>
       </div>
-
-      <!-- 공백 -->
-      <a href="#">    </a>
     </div>
   </div>
 
   <!-- 본문 -->
   <div class="content">
-    <h1>Arini 소개</h1>
-    <p>
+    <h1 id="intro-title">Arini 소개</h1>
+    <p id="intro-p1">
       Arini는 대한민국의 정통 싱어송라이터로서, 좋아하는 아티스트는 최유리, 권진아, 선우정아라고 TikTok 라이브 방송에서 답하였습니다.
       언급한 아티스트들처럼 전반적인 음악 작사, 작곡 등 모든 작업을 거의 혼자서 작업한다고 하였습니다.
     </p>
-    <p>
+    <p id="intro-p2">
       음악의 모든 영감은 본인의 경험담에서 나왔다고 Threads에서 말한 적이 있으며, 강아지를 무지 좋아하는 편입니다.
       아리니의 인스타그램 스토리에 가끔 복순이의 사진이 올라오고는 합니다.
     </p>
-    <p>
+    <p id="intro-p3">
       음악을 18살에 시작하였지만 본격적으로 음반을 내기 시작한 건 2024년입니다.
     </p>
 
-    <!-- 앨범 카드 -->
+    <!-- 앨범 -->
     <div class="albums">
       <div class="album-card">
         <img src="assets/images/album1.jpg" alt="앨범1" />
@@ -249,15 +213,26 @@
     </div>
   </div>
 
-  <!-- 하단 푸터 -->
-  <div class="footer">
-    <a href="https://youtube.com/@singing_arini?si=WwHcG-7OF4xHqbHh" target="_blank" aria-label="YouTube">
-      <i class="fab fa-youtube"></i>
-    </a>
-    <a href="https://instagram.com/arini.music" target="_blank" aria-label="Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-  </div>
+  <!-- 언어 전환 스크립트 -->
+  <script>
+    function setLanguage(lang) {
+      const dropBtn = document.querySelector('.dropbtn');
+
+      if (lang === 'en') {
+        dropBtn.textContent = 'Language';
+        document.getElementById('intro-title').textContent = 'About Arini';
+        document.getElementById('intro-p1').textContent = "Arini is a traditional Korean singer-songwriter. In a TikTok live, she mentioned her favorite artists are Choi Yuri, Kwon Jin Ah, and Sunwoo Jung A. Like them, she handles most of the writing and composing herself.";
+        document.getElementById('intro-p2').textContent = "She once shared on Threads that her musical inspiration comes from personal experiences. She is a big dog lover and often posts pictures of her dog 'Boksooni' on Instagram stories.";
+        document.getElementById('intro-p3').textContent = "Although she began making music at age 18, she officially started releasing albums in 2024.";
+      } else {
+        dropBtn.textContent = '언어';
+        document.getElementById('intro-title').textContent = 'Arini 소개';
+        document.getElementById('intro-p1').textContent = "Arini는 대한민국의 정통 싱어송라이터로서, 좋아하는 아티스트는 최유리, 권진아, 선우정아라고 TikTok 라이브 방송에서 답하였습니다. 언급한 아티스트들처럼 전반적인 음악 작사, 작곡 등 모든 작업을 거의 혼자서 작업한다고 하였습니다.";
+        document.getElementById('intro-p2').textContent = "음악의 모든 영감은 본인의 경험담에서 나왔다고 Threads에서 말한 적이 있으며, 강아지를 무지 좋아하는 편입니다. 아리니의 인스타그램 스토리에 가끔 복순이의 사진이 올라오고는 합니다.";
+        document.getElementById('intro-p3').textContent = "음악을 18살에 시작하였지만 본격적으로 음반을 내기 시작한 건 2024년입니다.";
+      }
+    }
+  </script>
 
 </body>
 </html>
