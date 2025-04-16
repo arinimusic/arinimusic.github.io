@@ -5,18 +5,6 @@
   <title>Arini - Contact</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google 번역 위젯 코드 -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'ko',  // 기본 언어 (한국어)
-        includedLanguages: 'ko,en,es,fr,de,it,ja,zh-CN,zh-TW',  // 번역 가능한 언어 목록
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
   <style>
     body {
       background: #fefefe;
@@ -26,6 +14,7 @@
       margin: 0;
     }
 
+    /* 상단 네비게이션 */
     .navbar {
       position: fixed;
       top: 0;
@@ -42,7 +31,18 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
 
-    /* 메뉴에 왼쪽 여백 230px 적용 */
+    /* 로고 */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    /* 메뉴 */
     .menu {
       display: flex;
       gap: 20px;
@@ -62,9 +62,40 @@
       color: #0056b3;
     }
 
+    /* 드롭다운 스타일 */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: bold;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
     .content {
       padding-top: 80px;
-      max-width: 1000px;
+      max-width: 800px;
       margin: 0 auto;
       padding-left: 20px;
       padding-right: 20px;
@@ -89,7 +120,6 @@
       line-height: 1.8;
     }
 
-    /* 하단 탭 스타일 */
     .footer {
       position: fixed;
       bottom: 0;
@@ -104,7 +134,6 @@
       box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
     }
 
-    /* 아이콘 크기 */
     .footer a img {
       width: 30px;
       margin: 0 15px;
@@ -116,7 +145,7 @@
         align-items: flex-start;
       }
 
-      .navbar .menu {
+      .menu {
         margin-left: 0;
         margin-top: 10px;
       }
@@ -132,19 +161,25 @@
     </div>
 
     <div class="menu">
-      <a href="artist.html">Artist</a>
-      <a href="contact.html">Contact</a>
-    </div>
+      <a href="artist.html" id="artist-menu">Artist</a>
+      <a href="contact.html" id="contact-menu">Contact</a>
 
-    <!-- Google 번역 위젯 -->
-    <div id="google_translate_element"></div>
+      <!-- 드롭다운 언어 선택 메뉴 -->
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Language</a>
+        <div class="dropdown-content">
+          <a href="#" onclick="setLanguage('ko')">Korean</a>
+          <a href="#" onclick="setLanguage('en')">English</a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- 콘텐츠 -->
   <div class="content">
     <div class="contact-info">
-      <h1>Contact</h1>
-      <p>문의 사항이 있으시면 아래 이메일 또는 SNS를 통해 연락해주세요.</p>
+      <h1 id="contact-title">Contact</h1>
+      <p id="contact-description">문의 사항이 있으시면 아래 이메일 또는 SNS를 통해 연락해주세요.</p>
       <p><strong>Email:</strong> arini.music@example.com</p>
       <p><strong>Instagram:</strong> <a href="https://instagram.com/arini.music" target="_blank">@arini.music</a></p>
       <p><strong>Threads:</strong> <a href="https://threads.net/arini.music" target="_blank">@arini.music</a></p>
@@ -160,6 +195,19 @@
       <img src="assets/images/instagram-icon.png" alt="Instagram" />
     </a>
   </div>
+
+  <script>
+    // 언어 변경 함수
+    function setLanguage(language) {
+      if (language === 'en') {
+        document.getElementById('contact-title').textContent = 'Contact';
+        document.getElementById('contact-description').textContent = 'If you have any questions, feel free to contact me through the email or SNS below.';
+      } else {
+        document.getElementById('contact-title').textContent = '연락처';
+        document.getElementById('contact-description').textContent = '문의 사항이 있으시면 아래 이메일 또는 SNS를 통해 연락해주세요.';
+      }
+    }
+  </script>
 
 </body>
 </html>
