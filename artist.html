@@ -118,6 +118,7 @@
     }
 
     .album-card {
+      position: relative;
       width: calc(50% - 10px);
       background-color: #fff;
       border-radius: 12px;
@@ -132,10 +133,22 @@
     }
 
     .album-card .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 123, 255, 0.8);
+      color: white;
       padding: 15px;
       font-weight: bold;
       font-size: 1.1em;
-      color: #333;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .album-card:hover .caption {
+      opacity: 1;
     }
 
     @media (max-width: 768px) {
