@@ -117,6 +117,15 @@
       color: #333;
     }
 
+    .notice-item h3 a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .notice-item h3 a:hover {
+      text-decoration: underline;
+    }
+
     .notice-item p {
       margin: 10px 0 0;
       font-size: 1em;
@@ -166,17 +175,23 @@
     <h1 id="notice-title">공지사항</h1>
 
     <div class="notice-item">
-      <h3 id="notice1-title">[공연 안내] 아리니 첫 단독 콘서트 개최!</h3>
+      <h3 id="notice1-title">
+        <a href="notice_01.html" target="_blank">[공연 안내] 아리니 첫 단독 콘서트 개최!</a>
+      </h3>
       <p id="notice1-text">아리니의 첫 단독 콘서트가 2025년 6월 서울에서 열립니다. 예매는 5월 1일부터 시작됩니다.</p>
     </div>
 
     <div class="notice-item">
-      <h3 id="notice2-title">[신곡 발매] ‘밤의 끝에서’ 음원 공개</h3>
+      <h3 id="notice2-title">
+        <a href="notice_02.html" target="_blank">[신곡 발매] ‘밤의 끝에서’ 음원 공개</a>
+      </h3>
       <p id="notice2-text">2025년 4월 20일 정오, 각종 음원 사이트를 통해 신곡 ‘밤의 끝에서’가 공개됩니다.</p>
     </div>
 
     <div class="notice-item">
-      <h3 id="notice3-title">[굿즈 출시] 아리니 공식 굿즈 판매 시작</h3>
+      <h3 id="notice3-title">
+        <a href="notice_03.html" target="_blank">[굿즈 출시] 아리니 공식 굿즈 판매 시작</a>
+      </h3>
       <p id="notice3-text">아리니의 공식 MD 스토어가 오픈되었습니다. 티셔츠, 키링, 포스터 등 다양한 굿즈를 만나보세요.</p>
     </div>
   </div>
@@ -189,20 +204,20 @@
       if (lang === 'en') {
         dropBtn.textContent = 'Language';
         document.getElementById('notice-title').textContent = 'Notices';
-        document.getElementById('notice1-title').textContent = '[Concert] Arini’s First Solo Concert!';
+        document.getElementById('notice1-title').innerHTML = '<a href="notice_01.html" target="_blank">[Concert] Arini’s First Solo Concert!</a>';
         document.getElementById('notice1-text').textContent = 'Arini will hold her first solo concert in June 2025 in Seoul. Tickets available from May 1.';
-        document.getElementById('notice2-title').textContent = '[New Release] "At the End of the Night" Out Soon';
+        document.getElementById('notice2-title').innerHTML = '<a href="notice_02.html" target="_blank">[New Release] "At the End of the Night" Out Soon</a>';
         document.getElementById('notice2-text').textContent = 'Her new song "At the End of the Night" will be released on April 20, 2025, at noon.';
-        document.getElementById('notice3-title').textContent = '[Merch] Official Arini Goods Released';
+        document.getElementById('notice3-title').innerHTML = '<a href="notice_03.html" target="_blank">[Merch] Official Arini Goods Released</a>';
         document.getElementById('notice3-text').textContent = 'The official Arini merchandise store is now open. Explore t-shirts, keyrings, posters and more!';
       } else {
         dropBtn.textContent = '언어';
         document.getElementById('notice-title').textContent = '공지사항';
-        document.getElementById('notice1-title').textContent = '[공연 안내] 아리니 첫 단독 콘서트 개최!';
+        document.getElementById('notice1-title').innerHTML = '<a href="notice_01.html" target="_blank">[공연 안내] 아리니 첫 단독 콘서트 개최!</a>';
         document.getElementById('notice1-text').textContent = '아리니의 첫 단독 콘서트가 2025년 6월 서울에서 열립니다. 예매는 5월 1일부터 시작됩니다.';
-        document.getElementById('notice2-title').textContent = '[신곡 발매] ‘밤의 끝에서’ 음원 공개';
+        document.getElementById('notice2-title').innerHTML = '<a href="notice_02.html" target="_blank">[신곡 발매] ‘밤의 끝에서’ 음원 공개</a>';
         document.getElementById('notice2-text').textContent = '2025년 4월 20일 정오, 각종 음원 사이트를 통해 신곡 ‘밤의 끝에서’가 공개됩니다.';
-        document.getElementById('notice3-title').textContent = '[굿즈 출시] 아리니 공식 굿즈 판매 시작';
+        document.getElementById('notice3-title').innerHTML = '<a href="notice_03.html" target="_blank">[굿즈 출시] 아리니 공식 굿즈 판매 시작</a>';
         document.getElementById('notice3-text').textContent = '아리니의 공식 MD 스토어가 오픈되었습니다. 티셔츠, 키링, 포스터 등 다양한 굿즈를 만나보세요.';
       }
     }
