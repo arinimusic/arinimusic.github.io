@@ -124,6 +124,7 @@
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
       overflow: hidden;
+      text-decoration: none;
     }
 
     .album-card img {
@@ -135,14 +136,13 @@
     .album-card .caption {
       position: absolute;
       bottom: 0;
-      left: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
       width: 100%;
-      background: rgba(0, 123, 255, 0.8);
-      color: white;
-      padding: 15px;
+      text-align: center;
+      padding: 10px;
       font-weight: bold;
       font-size: 1.1em;
-      text-align: center;
       opacity: 0;
       transition: opacity 0.3s ease;
     }
@@ -181,7 +181,6 @@
       <a href="notice.html">Notice</a>
       <a href="contact.html">Contact</a>
 
-      <!-- 언어 드롭다운 -->
       <div class="dropdown">
         <a href="#" class="dropbtn">Language</a>
         <div class="dropdown-content">
@@ -189,7 +188,6 @@
           <a href="#" onclick="setLanguage('en')">English</a>
         </div>
       </div>
-
       <a href="#">    </a>
     </div>
   </div>
@@ -211,26 +209,26 @@
 
     <!-- 앨범 카드 -->
     <div class="albums">
-      <div class="album-card">
+      <a href="https://example.com/album1" target="_blank" class="album-card">
         <img src="album1.jpg" alt="앨범1" />
         <div class="caption">내게로 영원히</div>
-      </div>
-      <div class="album-card">
+      </a>
+      <a href="https://example.com/album2" target="_blank" class="album-card">
         <img src="album2.jpg" alt="앨범2" />
         <div class="caption">보금자리</div>
-      </div>
-      <div class="album-card">
+      </a>
+      <a href="https://example.com/album3" target="_blank" class="album-card">
         <img src="album3.jpg" alt="앨범3" />
         <div class="caption">terapia</div>
-      </div>
-      <div class="album-card">
+      </a>
+      <a href="https://example.com/album4" target="_blank" class="album-card">
         <img src="album4.jpg" alt="앨범4" />
         <div class="caption">brain store</div>
-      </div>
-      <div class="album-card">
+      </a>
+      <a href="https://example.com/album5" target="_blank" class="album-card">
         <img src="album5.jpg" alt="앨범5" />
         <div class="caption">금요일에 만나요</div>
-      </div>
+      </a>
     </div>
   </div>
 
