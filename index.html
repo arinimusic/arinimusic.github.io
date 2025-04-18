@@ -112,22 +112,20 @@
     /* 앨범 카드 컨테이너 스타일 */
     .albums {
       display: flex;
-      flex-wrap: nowrap; /* 한 줄로 정렬 */
-      overflow-x: auto; /* 가로 스크롤 활성화 */
+      flex-wrap: wrap; /* 여러 줄로 카드 배치 */
       gap: 20px;
       margin-top: 30px;
-      padding-bottom: 20px; /* 스크롤바 위에 여백 */
+      justify-content: space-between; /* 카드 간격을 균등하게 배치 */
     }
 
     .album-card {
       position: relative;
-      width: calc(12.5% - 10px); /* 8개의 앨범 카드 */
+      width: calc(20% - 10px); /* 5개의 앨범 카드 */
       background-color: #fff;
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
       overflow: hidden;
       text-decoration: none;
-      flex-shrink: 0; /* 카드 크기 고정 */
     }
 
     .album-card img {
@@ -166,7 +164,13 @@
       }
 
       .album-card {
-        width: calc(25% - 10px); /* 4개로 줄어듬 */
+        width: calc(33.33% - 10px); /* 3개로 줄어듬 */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .album-card {
+        width: calc(50% - 10px); /* 2개로 줄어듬 */
       }
     }
   </style>
