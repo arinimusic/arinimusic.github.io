@@ -162,13 +162,11 @@
     function setLanguage(lang) {
       const dropBtn = document.querySelector('.dropbtn');
       if (lang === 'en') {
-        dropBtn.textContent = 'Language';
         document.getElementById('notice-title').textContent = 'Notice';
         document.getElementById('notice1-title').textContent = '[Concert Notice] Hongdae SPACE BRICK';
         document.getElementById('notice1-text').innerHTML = 
           'Arini will perform at <a href="http://spacebrickkorea.com/" target="_blank" style="color:#007bff; text-decoration:underline;">SPACE BRICK in Hongdae</a> on May 9, 2025.';
       } else {
-        dropBtn.textContent = '언어';
         document.getElementById('notice-title').textContent = '공지사항';
         document.getElementById('notice1-title').textContent = '[공연 안내] 홍대 SPACE BRICK';
         document.getElementById('notice1-text').innerHTML =
