@@ -169,18 +169,14 @@
   </style>
 </head>
 <body>
-
-  <!-- 상단 네비게이션 -->
   <div class="navbar">
     <div class="logo">
       <img src="logo.png" alt="Arini 로고" />
     </div>
-
     <div class="menu">
       <a href="artist.html">Artist</a>
       <a href="notice.html">Notice</a>
       <a href="contact.html">Contact</a>
-
       <div class="dropdown">
         <a href="#" class="dropbtn">Language</a>
         <div class="dropdown-content">
@@ -188,70 +184,25 @@
           <a href="#" onclick="setLanguage('en')">English</a>
         </div>
       </div>
-      <a href="#">    </a>
     </div>
   </div>
-
-  <!-- 본문 -->
   <div class="content">
-    <h1 id="intro-title">Arini 소개</h1>
+    <h1 id="intro-title">arini</h1>
     <p id="intro-p1">
-      Arini는 대한민국의 정통 싱어송라이터로서, 좋아하는 아티스트는 최유리, 권진아, 선우정아라고 TikTok 라이브 방송에서 답하였습니다.
-      언급한 아티스트들처럼 전반적인 음악 작사, 작곡 등 모든 작업을 거의 혼자서 작업한다고 하였습니다.
+      2024년 싱글 ‘보금자리’를 시작으로 ‘다 같이 안아 울자’, ‘금요일에 만나요’까지.
+      아리니는 직접 쓰고 만든 노래들로 감정을 솔직하게 마주하며, 꾸준히 자신만의 음악 세계를 그려가고 있다. 일상에서 얻은 감정의 조각들을 노래에 녹여내며, 리스너에게 잔잔한 공감과 위로를 전한다.
     </p>
     <p id="intro-p2">
-      음악의 모든 영감은 본인의 경험담에서 나왔다고 Threads에서 말한 적이 있으며, 강아지를 무지 좋아하는 편입니다.
-      아리니의 인스타그램 스토리에 가끔 복순이의 사진이 올라오고는 합니다.
+      자신이 좋아하는 아티스트로 최유리, 권진아, 선우정아를 꼽은 그녀는
+      이들과 마찬가지로 작사·작곡·프로듀싱 전 과정을 혼자 해내며,
+      스스로의 목소리와 감성으로 음악을 채워간다. 아리니의 음악은 거창하지 않지만,
+      그 안에 담긴 진심은 듣는 이의 마음에 오래도록 남는다.
     </p>
     <p id="intro-p3">
-      음악을 18살에 시작하였지만 본격적으로 음반을 내기 시작한 건 2024년입니다.
+      “우린 모두 상처를 잊고 살아갈 뿐이에요.”
+      그녀의 노랫말처럼, 아리니는 아픈 마음을 조용히 안아주는 노래를 만든다.
+      그리고 그 노래는, 누구나의 하루 끝에 놓일 수 있는 따뜻한 쉼이 된다.
     </p>
-
-    <!-- 앨범 카드 -->
-    <div class="albums">
-      <a href="https://kko.kakao.com/xjZaWLGNwT" target="_blank" class="album-card">
-        <img src="album1.jpg" alt="앨범1" />
-        <div class="caption">내게로 영원히</div>
-      </a>
-      <a href="https://open.spotify.com/album/7lwIzrNe6q9xExWRFKXO13?si=9xufG4nmRmaigdgi-UWkKQ" target="_blank" class="album-card">
-        <img src="album2.jpg" alt="앨범2" />
-        <div class="caption">보금자리</div>
-      </a>
-      <a href="https://open.spotify.com/album/31k8AlL5M6Cb85nk4gmDoA?si=FajzUPUFQL2HLthePRJnug" target="_blank" class="album-card">
-        <img src="album3.jpg" alt="앨범3" />
-        <div class="caption">terapia</div>
-      </a>
-      <a href="https://open.spotify.com/album/5lD5nad1v0fd308dCTuTI5?si=S004iaFbTfixGEYJi7Kbzg" target="_blank" class="album-card">
-        <img src="album4.jpg" alt="앨범4" />
-        <div class="caption">brain store</div>
-      </a>
-      <a href="https://open.spotify.com/album/5jKCJgsiJVkfbn21cdujuI?si=OWWKgY6rQcK616wsSpvpyQ" target="_blank" class="album-card">
-        <img src="album5.jpg" alt="앨범5" />
-        <div class="caption">금요일에 만나요</div>
-      </a>
-    </div>
   </div>
-
-  <!-- 언어 전환 스크립트 -->
-  <script>
-    function setLanguage(lang) {
-      const dropBtn = document.querySelector('.dropbtn');
-
-      if (lang === 'en') {
-        dropBtn.textContent = 'Language';
-        document.getElementById('intro-title').textContent = 'About Arini';
-        document.getElementById('intro-p1').textContent = "Arini is a traditional Korean singer-songwriter. In a TikTok live, she mentioned her favorite artists are Choi Yuri, Kwon Jin Ah, and Sunwoo Jung A. Like them, she handles most of the writing and composing herself.";
-        document.getElementById('intro-p2').textContent = "She once shared on Threads that her musical inspiration comes from personal experiences. She is a big dog lover and often posts pictures of her dog 'Boksooni' on Instagram stories.";
-        document.getElementById('intro-p3').textContent = "Although she began making music at age 18, she officially started releasing albums in 2024.";
-      } else {
-        dropBtn.textContent = 'Language';
-        document.getElementById('intro-title').textContent = 'Arini 소개';
-        document.getElementById('intro-p1').textContent = "Arini는 대한민국의 정통 싱어송라이터로서, 좋아하는 아티스트는 최유리, 권진아, 선우정아라고 TikTok 라이브 방송에서 답하였습니다. 언급한 아티스트들처럼 전반적인 음악 작사, 작곡 등 모든 작업을 거의 혼자서 작업한다고 하였습니다.";
-        document.getElementById('intro-p2').textContent = "음악의 모든 영감은 본인의 경험담에서 나왔다고 Threads에서 말한 적이 있으며, 강아지를 무지 좋아하는 편입니다. 아리니의 인스타그램 스토리에 가끔 복순이의 사진이 올라오고는 합니다.";
-        document.getElementById('intro-p3').textContent = "음악을 18살에 시작하였지만 본격적으로 음반을 내기 시작한 건 2024년입니다.";
-      }
-    }
-  </script>
-
 </body>
 </html>
