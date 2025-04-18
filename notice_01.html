@@ -106,6 +106,11 @@
       font-size: 1em;
       line-height: 1.6;
     }
+    .notice-item img {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
     @media (max-width: 768px) {
       .navbar {
         flex-direction: column;
@@ -142,7 +147,14 @@
     <h1 id="notice-title">공지사항</h1>
     <div class="notice-item">
       <h3 id="notice1-title">[공연 안내] 홍대 SPACE BRICK</h3>
-      <p id="notice1-text">2025년 5월 9일, 홍대 SPACE BRICK에서 아리니 공연이 개최됩니다.</p>
+      <p id="notice1-text">
+        2025년 5월 9일, 
+        <a href="http://spacebrickkorea.com/" target="_blank" style="color:#007bff; text-decoration:underline;">
+          홍대 SPACE BRICK
+        </a>
+        에서 아리니 공연이 개최됩니다.
+      </p>
+      <img src="notice_02.jpg" alt="아리니 공연 포스터" />
     </div>
   </div>
 
@@ -153,12 +165,14 @@
         dropBtn.textContent = 'Language';
         document.getElementById('notice-title').textContent = 'Notice';
         document.getElementById('notice1-title').textContent = '[Concert Notice] Hongdae SPACE BRICK';
-        document.getElementById('notice1-text').textContent = 'Arini will perform at SPACE BRICK in Hongdae on May 9, 2025.';
+        document.getElementById('notice1-text').innerHTML = 
+          'Arini will perform at <a href="http://spacebrickkorea.com/" target="_blank" style="color:#007bff; text-decoration:underline;">SPACE BRICK in Hongdae</a> on May 9, 2025.';
       } else {
         dropBtn.textContent = '언어';
         document.getElementById('notice-title').textContent = '공지사항';
         document.getElementById('notice1-title').textContent = '[공연 안내] 홍대 SPACE BRICK';
-        document.getElementById('notice1-text').textContent = '2025년 5월 9일, 홍대 SPACE BRICK에서 아리니 공연이 개최됩니다.';
+        document.getElementById('notice1-text').innerHTML =
+          '2025년 5월 9일, <a href="http://spacebrickkorea.com/" target="_blank" style="color:#007bff; text-decoration:underline;">홍대 SPACE BRICK</a>에서 아리니 공연이 개최됩니다.';
       }
     }
   </script>
