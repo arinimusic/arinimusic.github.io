@@ -150,12 +150,10 @@
     function setLanguage(lang) {
       const dropBtn = document.querySelector('.dropbtn');
       if (lang === 'en') {
-        dropBtn.textContent = 'Language';
         document.getElementById('notice-title').textContent = 'Notice';
         document.getElementById('notice1-title').textContent = '[New Release] "See You on Friday" is now out';
         document.getElementById('notice1-text').textContent = 'On January 10, 2025, Arini’s new song "See You on Friday" will be available on all major music platforms.';
       } else {
-        dropBtn.textContent = '언어';
         document.getElementById('notice-title').textContent = '공지사항';
         document.getElementById('notice1-title').textContent = '[신곡 발매] ‘금요일에 만나요’ 음원 공개';
         document.getElementById('notice1-text').textContent = '2025년 1월 10일, 각종 음원 사이트를 통해 신곡 ‘금요일에 만나요’가 공개됩니다.';
