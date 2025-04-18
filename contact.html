@@ -5,7 +5,7 @@
   <title>Arini - Contact</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Font Awesome (아이콘 표시용) -->
+  <!-- Font Awesome (인스타그램 아이콘용) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Fo3rlrZj/kTc+Vq4z6f7aR+6FyP0q1v7J5D6O+jsH7KDn2xZbXe7QTrNQ7v9n08Vb9KU5R4FbcYvS90TWe09YQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
@@ -17,7 +17,6 @@
       margin: 0;
     }
 
-    /* 상단 네비게이션 바 */
     .navbar {
       position: fixed;
       top: 0;
@@ -120,6 +119,11 @@
       line-height: 1.8;
     }
 
+    .instagram-link i {
+      margin-right: 8px;
+      color: #E1306C; /* 인스타그램 컬러 느낌 */
+    }
+
     @media (max-width: 768px) {
       .navbar {
         flex-direction: column;
@@ -135,20 +139,16 @@
 </head>
 <body>
 
-  <!-- 상단 네비게이션 영역 -->
   <div class="navbar">
-    <!-- 로고 -->
     <div class="logo">
       <img src="logo.png" alt="Arini 로고" />
     </div>
 
-    <!-- 메뉴 항목들 -->
     <div class="menu">
       <a href="artist.html" id="artist-menu">Artist</a>
       <a href="notice.html">Notice</a>
       <a href="contact.html" id="contact-menu">Contact</a>
 
-      <!-- Language 드롭다운 -->
       <div class="dropdown">
         <a href="#" class="dropbtn">Language</a>
         <div class="dropdown-content">
@@ -157,23 +157,21 @@
         </div>
       </div>
 
-      <!-- 공백 -->
       <a href="#">    </a>
     </div>
   </div>
 
-  <!-- 본문 콘텐츠 영역 -->
   <div class="content">
     <div class="contact-info">
       <h1 id="contact-title">Contact</h1>
-      <p id="contact-description">문의 사항이 있으시면 아래 이메일 또는 SNS를 통해 연락해주세요.</p>
-      <p><strong>Email:</strong> arini.music@example.com</p>
-      <p><strong>Instagram:</strong> <a href="https://instagram.com/arini.music" target="_blank">@arini.music</a></p>
-      <p><strong>Threads:</strong> <a href="https://threads.net/arini.music" target="_blank">@arini.music</a></p>
+      <p id="contact-description">문의 사항이 있으시면 아래 인스타그램을 통해 연락해주세요.</p>
+      <p class="instagram-link">
+        <i class="fab fa-instagram"></i>
+        <a href="https://instagram.com/arini.music" target="_blank">@arini.music</a>
+      </p>
     </div>
   </div>
 
-  <!-- 언어 설정 스크립트 -->
   <script>
     function setLanguage(language) {
       const title = document.getElementById('contact-title');
@@ -183,13 +181,13 @@
 
       if (language === 'en') {
         title.textContent = 'Contact';
-        desc.textContent = 'If you have any questions, feel free to contact me through the email or SNS below.';
+        desc.textContent = 'If you have any questions, feel free to reach out via Instagram below.';
         dropBtn.textContent = 'Language';
         dropdownLinks[0].textContent = 'Korean';
         dropdownLinks[1].textContent = 'English';
       } else {
         title.textContent = '연락처';
-        desc.textContent = '문의 사항이 있으시면 아래 이메일 또는 SNS를 통해 연락해주세요.';
+        desc.textContent = '문의 사항이 있으시면 아래 인스타그램을 통해 연락해주세요.';
         dropBtn.textContent = '언어';
         dropdownLinks[0].textContent = '한국어';
         dropdownLinks[1].textContent = '영어';
