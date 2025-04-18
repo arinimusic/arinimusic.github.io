@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
-    /* 스타일 동일 - notice.html 참조 */
     body {
       background: #fefefe;
       color: #333;
@@ -129,7 +128,7 @@
       <a href="notice.html">Notice</a>
       <a href="contact.html">Contact</a>
       <div class="dropdown">
-        <a href="#" class="dropbtn">Language</a>
+        <a href="#" class="dropbtn">언어</a>
         <div class="dropdown-content">
           <a href="#" onclick="setLanguage('ko')">한국어</a>
           <a href="#" onclick="setLanguage('en')">English</a>
@@ -142,8 +141,8 @@
   <div class="content">
     <h1 id="notice-title">공지사항</h1>
     <div class="notice-item">
-      <h3 id="notice1-title">[영상 공개] ‘달빛 아래서’ 라이브 영상 공개</h3>
-      <p id="notice1-text">아리니의 ‘달빛 아래서’ 라이브 무대 영상이 공식 유튜브 채널에 업로드되었습니다. 많은 시청 부탁드립니다!</p>
+      <h3 id="notice1-title">[신곡 발매] ‘금요일에 만나요’ 음원 공개</h3>
+      <p id="notice1-text">2025년 1월 10일, 각종 음원 사이트를 통해 신곡 ‘금요일에 만나요’가 공개됩니다.</p>
     </div>
   </div>
 
@@ -153,13 +152,13 @@
       if (lang === 'en') {
         dropBtn.textContent = 'Language';
         document.getElementById('notice-title').textContent = 'Notice';
-        document.getElementById('notice1-title').textContent = '[Video Release] "Under the Moonlight" Live Performance';
-        document.getElementById('notice1-text').textContent = 'Arini\'s live performance of "Under the Moonlight" is now available on her official YouTube channel. Enjoy watching!';
+        document.getElementById('notice1-title').textContent = '[New Release] "See You on Friday" is now out';
+        document.getElementById('notice1-text').textContent = 'On January 10, 2025, Arini’s new song "See You on Friday" will be available on all major music platforms.';
       } else {
         dropBtn.textContent = '언어';
         document.getElementById('notice-title').textContent = '공지사항';
-        document.getElementById('notice1-title').textContent = '[영상 공개] ‘달빛 아래서’ 라이브 영상 공개';
-        document.getElementById('notice1-text').textContent = '아리니의 ‘달빛 아래서’ 라이브 무대 영상이 공식 유튜브 채널에 업로드되었습니다. 많은 시청 부탁드립니다!';
+        document.getElementById('notice1-title').textContent = '[신곡 발매] ‘금요일에 만나요’ 음원 공개';
+        document.getElementById('notice1-text').textContent = '2025년 1월 10일, 각종 음원 사이트를 통해 신곡 ‘금요일에 만나요’가 공개됩니다.';
       }
     }
   </script>
