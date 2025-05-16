@@ -106,12 +106,19 @@
       font-size: 1em;
       line-height: 1.6;
     }
-    .notice-item iframe {
-      width: 100%;
-      height: 400px;
-      border: none;
+    .youtube-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #ff0000;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
       border-radius: 8px;
-      margin-top: 15px;
+      transition: background-color 0.3s;
+    }
+    .youtube-link:hover {
+      background-color: #cc0000;
     }
     @media (max-width: 768px) {
       .navbar {
@@ -152,7 +159,7 @@
       <p id="notice3-text">
         팬들의 따뜻한 응원 속에서 아리니가 무대 위 첫 걸음을 성공적으로 마쳤습니다. 무대 위에서의 빛나는 순간은 모두 팬 여러분 덕분이었습니다. 앞으로도 아리니의 음악 여정에 많은 기대와 응원 부탁드립니다.
       </p>
-      <iframe src="https://www.youtube.com/embed/g8nRyizNHxA" allowfullscreen></iframe>
+      <a class="youtube-link" href="https://youtu.be/g8nRyizNHxA?si=Ep8mVdj7K_kz_hmp" target="_blank">유튜브 영상 보러가기</a>
     </div>
   </div>
 
@@ -163,12 +170,14 @@
         document.getElementById('notice-title').textContent = 'Notice';
         document.getElementById('notice3-title').textContent = '[Stage Report] Arini, Shining Bright on Stage';
         document.getElementById('notice3-text').innerHTML =
-          'With the warm support of fans, Arini successfully completed her debut stage.The shining moment on stage was all thanks to you.Please continue to support Arini as she continues her musical journey.';
+          'With the warm support of fans, Arini successfully completed her debut stage. The shining moment on stage was all thanks to you. Please continue to support Arini as she continues her musical journey.';
+        document.querySelector('.youtube-link').textContent = 'Watch on YouTube';
       } else {
         document.getElementById('notice-title').textContent = '공지사항';
         document.getElementById('notice3-title').textContent = '[무대 리포트] 아리니, 무대 위 반짝인 순간';
         document.getElementById('notice3-text').innerHTML =
           '팬들의 따뜻한 응원 속에서 아리니가 무대 위 첫 걸음을 성공적으로 마쳤습니다. 무대 위에서의 빛나는 순간은 모두 팬 여러분 덕분이었습니다. 앞으로도 아리니의 음악 여정에 많은 기대와 응원 부탁드립니다.';
+        document.querySelector('.youtube-link').textContent = '유튜브 영상 보러가기';
       }
     }
   </script>
