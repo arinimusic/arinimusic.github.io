@@ -174,6 +174,14 @@
   <div class="content">
     <h1 id="notice-title">공지사항</h1>
 
+<div class="notice-item">
+      <h3 id="notice3-title">
+        <a href="notice_03.html" target="_blank">[무대 리포트] 아리니, 무대 위 반짝인 순간</a>
+      </h3>
+      <p id="notice2-text">2025년 5월 9일, 홍대 SPACE BRICK에서 성공적으로 무대 공연을 하였습니다.</p>
+    </div>
+  </div>
+    
     <div class="notice-item">
       <h3 id="notice1-title">
         <a href="notice_01.html" target="_blank">[공연 안내] 홍대 SPACE BRICK </a>
@@ -188,7 +196,7 @@
       <p id="notice2-text">2025년 1월 10일, 각종 음원 사이트를 통해 신곡 ‘금요일에 만나요’가 공개됩니다.</p>
     </div>
   </div>
-
+  
   <!-- 언어 전환 스크립트 -->
   <script>
     function setLanguage(lang) {
@@ -196,12 +204,16 @@
 
       if (lang === 'en') {
         document.getElementById('notice-title').textContent = 'Notices';
+        document.getElementById('notice1-title').innerHTML = '<a href="notice_01.html" target="_blank">[Stage Report] Arini, Shining Bright on Stage</a>';
+        document.getElementById('notice1-text').textContent = 'Arini lit up the stage with a successful performance at SPACE BRICK in Hongdae on May 9, 2025.';
         document.getElementById('notice1-title').innerHTML = '<a href="notice_01.html" target="_blank">[Concert] Hongdae SPACE BRICK</a>';
         document.getElementById('notice1-text').textContent = 'On May 9, 2025, Arini will perform at SPACE BRICK in Hongdae.';
         document.getElementById('notice2-title').innerHTML = '<a href="notice_02.html" target="_blank">[New Release] "Meet on Friday" Out Soon</a>';
         document.getElementById('notice2-text').textContent = 'On January 10, 2025, the new song ‘See You on Friday’ will be released through various music sites.';
       } else {
         document.getElementById('notice-title').textContent = '공지사항';
+        document.getElementById('notice1-title').innerHTML = '<a href="notice_01.html" target="_blank">[무대 리포트] 아리니, 무대 위 반짝인 순간</a>';
+        document.getElementById('notice1-text').textContent = '2025년 5월 9일, 홍대 SPACE BRICK에서 성공적으로 무대 공연을 하였습니다.';
         document.getElementById('notice1-title').innerHTML = '<a href="notice_01.html" target="_blank">[공연 안내] 홍대 SPACE BRICK </a>';
         document.getElementById('notice1-text').textContent = '2025년 5월 9일, 홍대 SPACE BRICK에서 아리니 공연이 개최됩니다.';
         document.getElementById('notice2-title').innerHTML = '<a href="notice_02.html" target="_blank">[신곡 발매] ‘금요일에 만나요’ 음원 공개</a>';
