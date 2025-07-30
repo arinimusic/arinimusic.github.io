@@ -175,6 +175,13 @@
     <h1 id="notice-title">공지사항</h1>
 
     <div class="notice-item">
+      <h3 id="notice4-title">
+        <a href="notice_04.html" target="_blank">[신곡 발매] ‘Love bird’ 음원 공개</a>
+      </h3>
+      <p id="notice4-text">2025년 5월 30일, 각종 음원 사이트를 통해 신곡 ‘Love bird’가 공개됩니다.</p>
+    </div>
+
+    <div class="notice-item">
       <h3 id="notice3-title">
         <a href="notice_03.html" target="_blank">[무대 리포트] 아리니, 무대 위 반짝인 순간</a>
       </h3>
@@ -202,6 +209,9 @@
       if (lang === 'en') {
         document.getElementById('notice-title').textContent = 'Notices';
 
+        document.getElementById('notice4-title').innerHTML = '<a href="notice_04.html" target="_blank">[New Release] "Love bird" Out Soon</a>';
+        document.getElementById('notice4-text').textContent = 'On May 30, 2025, the new song "Love bird" will be released through various music sites.';
+
         document.getElementById('notice3-title').innerHTML = '<a href="notice_03.html" target="_blank">[Stage Report] Arini, a Shining Moment on Stage</a>';
         document.getElementById('notice3-text').textContent = 'On May 9, 2025, Arini successfully performed on stage at SPACE BRICK in Hongdae.';
 
@@ -212,6 +222,9 @@
         document.getElementById('notice2-text').textContent = 'On January 10, 2025, the new song "See You on Friday" will be released through various music sites.';
       } else {
         document.getElementById('notice-title').textContent = '공지사항';
+
+        document.getElementById('notice4-title').innerHTML = '<a href="notice_04.html" target="_blank">[신곡 발매] ‘Love bird’ 음원 공개</a>';
+        document.getElementById('notice4-text').textContent = '2025년 5월 30일, 각종 음원 사이트를 통해 신곡 ‘Love bird’가 공개됩니다.';
 
         document.getElementById('notice3-title').innerHTML = '<a href="notice_03.html" target="_blank">[무대 리포트] 아리니, 무대 위 반짝인 순간</a>';
         document.getElementById('notice3-text').textContent = '2025년 5월 9일, 홍대 SPACE BRICK에서 성공적으로 무대 공연을 하였습니다.';
