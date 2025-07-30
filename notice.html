@@ -2,9 +2,10 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>Arini - Home</title>
+  <title>Arini - Notice</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Fo3rlrZj/kTc+Vq4z6f7aR+6FyP0q1v7J5D6O+jsH7KDn2xZbXe7QTrNQ7v9n08Vb9KU5R4FbcYvS90TWe09YQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style>
     body {
       background: #fefefe;
@@ -13,6 +14,7 @@
       padding: 0;
       margin: 0;
     }
+
     .navbar {
       position: fixed;
       top: 0;
@@ -28,19 +30,23 @@
       flex-wrap: wrap;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
+
     .logo {
       display: flex;
       align-items: center;
       gap: 10px;
     }
+
     .logo img {
       height: 40px;
     }
+
     .menu {
       display: flex;
       gap: 20px;
       margin-left: 230px;
     }
+
     .navbar a {
       color: #007bff;
       text-decoration: none;
@@ -48,13 +54,16 @@
       padding-bottom: 4px;
       transition: color 0.3s;
     }
+
     .navbar a:hover {
       color: #0056b3;
     }
+
     .dropdown {
       position: relative;
       display: inline-block;
     }
+
     .dropdown-content {
       display: none;
       position: absolute;
@@ -63,9 +72,11 @@
       box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
       z-index: 1;
     }
+
     .dropdown:hover .dropdown-content {
       display: block;
     }
+
     .dropdown-content a {
       color: black;
       padding: 12px 16px;
@@ -73,135 +84,80 @@
       display: block;
       font-weight: bold;
     }
+
     .dropdown-content a:hover {
       background-color: #ddd;
     }
+
     .content {
       padding-top: 100px;
-      max-width: 1000px;
+      max-width: 800px;
       margin: 0 auto;
       padding-left: 20px;
       padding-right: 20px;
     }
-    .content h1 {
+
+    h1 {
       font-size: 2em;
       color: #007bff;
       margin-bottom: 20px;
     }
-    .content p {
-      font-size: 1.1em;
-      line-height: 1.8;
+
+    .notice-item {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       margin-bottom: 20px;
     }
-    .intro-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      align-items: flex-start;
-      margin-bottom: 60px;
+
+    .notice-item h3 {
+      margin-top: 0;
+      font-size: 1.2em;
+      color: #333;
     }
-    .profile-image {
-      flex: 1 1 400px;
-      max-width: 400px;
-    }
-    .profile-image img {
-      width: 100%;
-      border-radius: 12px;
-    }
-    .intro-text {
-      flex: 2 1 400px;
-      min-width: 250px;
-    }
-    .album-title {
-      font-size: 2em;
+
+    .notice-item h3 a {
       color: #007bff;
-      font-weight: bold;
-      margin-top: 60px;
-      margin-bottom: 20px;
-      text-align: left;
-    }
-    .albums {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 30px;
-      justify-content: space-between;
-      margin-bottom: 60px;
-    }
-    .album-card {
-      position: relative;
-      width: calc(20% - 10px);
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      overflow: hidden;
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
-    .album-card img {
-      width: 100%;
-      height: auto;
-      display: block;
+
+    .notice-item h3 a:hover {
+      text-decoration: underline;
     }
-    .album-card .caption {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0, 0, 0, 0.6);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-weight: bold;
-      font-size: 1.1em;
-      opacity: 0;
-      transition: opacity 0.3s ease;
+
+    .notice-item p {
+      margin: 10px 0 0;
+      font-size: 1em;
+      line-height: 1.6;
     }
-    .album-card:hover .caption {
-      opacity: 1;
-    }
+
     @media (max-width: 768px) {
       .navbar {
         flex-direction: column;
         align-items: flex-start;
       }
+
       .menu {
         margin-left: 0;
         margin-top: 10px;
-      }
-      .album-card {
-        width: calc(33.33% - 10px);
-      }
-    }
-    @media (max-width: 480px) {
-      .album-card {
-        width: calc(50% - 10px);
-      }
-      .intro-section {
-        flex-direction: column;
-        align-items: center;
-      }
-      .intro-text {
-        text-align: center;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- 상단 네비게이션 -->
   <div class="navbar">
     <div class="logo">
       <img src="logo.png" alt="Arini 로고" />
     </div>
+
     <div class="menu">
       <a href="artist.html">Artist</a>
       <a href="notice.html">Notice</a>
       <a href="contact.html">Contact</a>
+
       <div class="dropdown">
         <a href="#" class="dropbtn">Language</a>
         <div class="dropdown-content">
@@ -209,80 +165,65 @@
           <a href="#" onclick="setLanguage('en')">English</a>
         </div>
       </div>
+
       <a href="#">    </a>
     </div>
   </div>
 
+  <!-- 본문 -->
   <div class="content">
+    <h1 id="notice-title">공지사항</h1>
 
-    <div class="intro-section">
-      <div class="profile-image">
-        <br /><br /><br />
-        <img src="profile.jpg" alt="아리니 사진" />
-      </div>
-
-      <div class="intro-text">
-        <h1 id="intro-title">Arini</h1>
-        <p id="intro-p1">2024년 싱글 ‘보금자리’를 시작으로 ‘다 같이 안아 울자’, ‘금요일에 만나요’까지. 아리니는 직접 쓰고 만든 노래들로 감정을 솔직하게 마주하며, 꾸준히 자신만의 음악 세계를 그려가고 있다. 일상에서 얻은 감정의 조각들을 노래에 녹여내며, 리스너에게 잔잔한 공감과 위로를 전한다.</p>
-        <p id="intro-p2">자신이 좋아하는 아티스트로 최유리, 권진아, 선우정아를 꼽은 그녀는 이들과 마찬가지로 작사·작곡·프로듀싱 전 과정을 혼자 해내며, 스스로의 목소리와 감성으로 음악을 채워간다. 아리니의 음악은 거창하지 않지만, 그 안에 담긴 진심은 듣는 이의 마음에 오래도록 남는다.</p>
-        <p id="intro-p3">“우린 모두 상처를 잊고 살아갈 뿐이에요.” 그녀의 노랫말처럼, 아리니는 아픈 마음을 조용히 안아주는 노래를 만든다. 그리고 그 노래는, 누구나의 하루 끝에 놓일 수 있는 따뜻한 쉼이 된다.</p>
-      </div>
+    <div class="notice-item">
+      <h3 id="notice3-title">
+        <a href="notice_03.html" target="_blank">[무대 리포트] 아리니, 무대 위 반짝인 순간</a>
+      </h3>
+      <p id="notice3-text">2025년 5월 9일, 홍대 SPACE BRICK에서 성공적으로 무대 공연을 하였습니다.</p>
     </div>
 
-    <div class="album-title">Album</div>
+    <div class="notice-item">
+      <h3 id="notice1-title">
+        <a href="notice_01.html" target="_blank">[공연 안내] 홍대 SPACE BRICK</a>
+      </h3>
+      <p id="notice1-text">2025년 5월 9일, 홍대 SPACE BRICK에서 아리니 공연이 개최됩니다.</p>
+    </div>
 
-    <div class="albums">
-      <a href="https://kko.kakao.com/xjZaWLGNwT" target="_blank" class="album-card">
-        <img src="album1.jpg" alt="앨범1" />
-        <div class="caption">내게로 영원히</div>
-      </a>
-      <a href="https://open.spotify.com/album/7lwIzrNe6q9xExWRFKXO13?si=9xufG4nmRmaigdgi-UWkKQ" target="_blank" class="album-card">
-        <img src="album2.jpg" alt="앨범2" />
-        <div class="caption">보금자리</div>
-      </a>
-      <a href="https://open.spotify.com/album/31k8AlL5M6Cb85nk4gmDoA?si=FajzUPUFQL2HLthePRJnug" target="_blank" class="album-card">
-        <img src="album3.jpg" alt="앨범3" />
-        <div class="caption">terapia</div>
-      </a>
-      <a href="https://open.spotify.com/album/5lD5nad1v0fd308dCTuTI5?si=S004iaFbTfixGEYJi7Kbzg" target="_blank" class="album-card">
-        <img src="album4.jpg" alt="앨범4" />
-        <div class="caption">brain store</div>
-      </a>
-      <a href="https://open.spotify.com/album/5jKCJgsiJVkfbn21cdujuI?si=OWWKgY6rQcK616wsSpvpyQ" target="_blank" class="album-card">
-        <img src="album5.jpg" alt="앨범5" />
-        <div class="caption">금요일에 만나요</div>
-      </a>
-      <!-- 앨범 6 - Love bird 추가 -->
-      <a href="#" target="_blank" class="album-card">
-        <img src="album6.jpg" alt="앨범6" />
-        <div class="caption">Love bird</div>
-      </a>
+    <div class="notice-item">
+      <h3 id="notice2-title">
+        <a href="notice_02.html" target="_blank">[신곡 발매] ‘금요일에 만나요’ 음원 공개</a>
+      </h3>
+      <p id="notice2-text">2025년 1월 10일, 각종 음원 사이트를 통해 신곡 ‘금요일에 만나요’가 공개됩니다.</p>
     </div>
   </div>
 
+  <!-- 언어 전환 스크립트 -->
   <script>
     function setLanguage(lang) {
-      const dropBtn = document.querySelector('.dropbtn');
       if (lang === 'en') {
-        dropBtn.textContent = 'Language';
-        document.getElementById('intro-title').textContent = 'Arini';
-        document.getElementById('intro-p1').textContent =
-          "Starting with the 2024 single ‘Nest’, followed by ‘Let’s Hug and Cry Together’ and ‘See You on Friday’, Arini has been building her own musical world with songs she has written and composed herself. By capturing fragments of emotions from everyday life in her music, she gently delivers empathy and comfort to listeners.";
-        document.getElementById('intro-p2').textContent =
-          "She names Choi Yuri, Kwon Jin-ah, and Sunwoo Jung-a as her favorite artists. Like them, she writes lyrics, composes, and produces her songs on her own, filling her music with her unique voice and emotions. Arini’s music may not be grand, but the sincerity within resonates deeply and lingers long in the hearts of listeners.";
-        document.getElementById('intro-p3').textContent =
-          "“We all just live forgetting our wounds.” Just like her lyrics, Arini creates songs that gently embrace pain. Her music becomes a warm place of rest that can be found at the end of anyone’s day.";
+        document.getElementById('notice-title').textContent = 'Notices';
+
+        document.getElementById('notice3-title').innerHTML = '<a href="notice_03.html" target="_blank">[Stage Report] Arini, a Shining Moment on Stage</a>';
+        document.getElementById('notice3-text').textContent = 'On May 9, 2025, Arini successfully performed on stage at SPACE BRICK in Hongdae.';
+
+        document.getElementById('notice1-title').innerHTML = '<a href="notice_01.html" target="_blank">[Concert] Hongdae SPACE BRICK</a>';
+        document.getElementById('notice1-text').textContent = 'On May 9, 2025, Arini will perform at SPACE BRICK in Hongdae.';
+
+        document.getElementById('notice2-title').innerHTML = '<a href="notice_02.html" target="_blank">[New Release] "See You on Friday" Out Soon</a>';
+        document.getElementById('notice2-text').textContent = 'On January 10, 2025, the new song "See You on Friday" will be released through various music sites.';
       } else {
-        dropBtn.textContent = 'Language';
-        document.getElementById('intro-title').textContent = 'Arini';
-        document.getElementById('intro-p1').textContent =
-          "2024년 싱글 ‘보금자리’를 시작으로 ‘다 같이 안아 울자’, ‘금요일에 만나요’까지. 아리니는 직접 쓰고 만든 노래들로 감정을 솔직하게 마주하며, 꾸준히 자신만의 음악 세계를 그려가고 있다. 일상에서 얻은 감정의 조각들을 노래에 녹여내며, 리스너에게 잔잔한 공감과 위로를 전한다.";
-        document.getElementById('intro-p2').textContent =
-          "자신이 좋아하는 아티스트로 최유리, 권진아, 선우정아를 꼽은 그녀는 이들과 마찬가지로 작사·작곡·프로듀싱 전 과정을 혼자 해내며, 스스로의 목소리와 감성으로 음악을 채워간다. 아리니의 음악은 거창하지 않지만, 그 안에 담긴 진심은 듣는 이의 마음에 오래도록 남는다.";
-        document.getElementById('intro-p3').textContent =
-          "“우린 모두 상처를 잊고 살아갈 뿐이에요.” 그녀의 노랫말처럼, 아리니는 아픈 마음을 조용히 안아주는 노래를 만든다. 그리고 그 노래는, 누구나의 하루 끝에 놓일 수 있는 따뜻한 쉼이 된다.";
+        document.getElementById('notice-title').textContent = '공지사항';
+
+        document.getElementById('notice3-title').innerHTML = '<a href="notice_03.html" target="_blank">[무대 리포트] 아리니, 무대 위 반짝인 순간</a>';
+        document.getElementById('notice3-text').textContent = '2025년 5월 9일, 홍대 SPACE BRICK에서 성공적으로 무대 공연을 하였습니다.';
+
+        document.getElementById('notice1-title').innerHTML = '<a href="notice_01.html" target="_blank">[공연 안내] 홍대 SPACE BRICK</a>';
+        document.getElementById('notice1-text').textContent = '2025년 5월 9일, 홍대 SPACE BRICK에서 아리니 공연이 개최됩니다.';
+
+        document.getElementById('notice2-title').innerHTML = '<a href="notice_02.html" target="_blank">[신곡 발매] ‘금요일에 만나요’ 음원 공개</a>';
+        document.getElementById('notice2-text').textContent = '2025년 1월 10일, 각종 음원 사이트를 통해 신곡 ‘금요일에 만나요’가 공개됩니다.';
       }
     }
   </script>
+
 </body>
 </html>
