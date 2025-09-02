@@ -161,19 +161,20 @@
 
   <script>
     function setLanguage(lang) {
-      const dropBtn = document.querySelector('.dropbtn');
-      if (lang === 'en') {
-        document.getElementById('notice-title').textContent = 'Notice';
-        document.getElementById('notice1-title').textContent = '[Interview] Wavbor, Showcase Interview ARTIST "Arini"';
-        document.getElementById('notice1-text').innerHTML = 
-          'Wavbor, Showcase Interview ARTIST "arini" <br> <a href="https://wavbor.com/showcase/interview/artist-%EC%95%84%EB%A6%AC%EB%8B%88arini-b5f9925f-6b38-493d-8329-6859912d5af0" target="_blank" style="color:#007bff; text-decoration:underline;">'Showcase Interview ARTIST "Arini"</a>;
-      } else {
-        document.getElementById('notice-title').textContent = '공지사항';
-        document.getElementById('notice1-title').textContent = '[인터뷰] Wavbor, Showcase Interview ARTIST "아리니(arini)';
-        document.getElementById('notice1-text').innerHTML =
-          'Wavbor, Showcase Interview ARTIST "아리니" <br> <a href="https://wavbor.com/showcase/interview/artist-%EC%95%84%EB%A6%AC%EB%8B%88arini-b5f9925f-6b38-493d-8329-6859912d5af0" target="_blank" style="color:#007bff; text-decoration:underline;">'Showcase Interview ARTIST "Arini"</a>;
-      }
-    }
+  if (lang === 'en') {
+    document.getElementById('notice-title').textContent = 'Notice';
+    document.getElementById('notice1-title').textContent = '[Interview] Wavbor, Showcase Interview ARTIST "Arini"';
+    document.getElementById('notice1-text').innerHTML =
+      'Wavbor, Showcase Interview ARTIST "Arini"<br>' +
+      '<a href="https://wavbor.com/showcase/interview/artist-%EC%95%84%EB%A6%AC%EB%8B%88arini-b5f9925f-6b38-493d-8329-6859912d5af0" target="_blank" style="color:#007bff; text-decoration:underline;">Showcase Interview ARTIST "Arini"</a>';
+  } else {
+    document.getElementById('notice-title').textContent = '공지사항';
+    document.getElementById('notice1-title').textContent = '[인터뷰] Wavbor, Showcase Interview ARTIST "아리니(arini)"';
+    document.getElementById('notice1-text').innerHTML =
+      'Wavbor, Showcase Interview ARTIST "아리니"<br>' +
+      '<a href="https://wavbor.com/showcase/interview/artist-%EC%95%84%EB%A6%AC%EB%8B%88arini-b5f9925f-6b38-493d-8329-6859912d5af0" target="_blank" style="color:#007bff; text-decoration:underline;">Showcase Interview ARTIST "Arini"</a>';
+  }
+}
   </script>
 </body>
 </html>
